@@ -1,0 +1,120 @@
+This assignment has four objectives:
+
+    To learn how to to compile multiple C files into an executable program.
+    To demonstrate that many of the Java programming constructs you learned are valid in C. (Java and C++ syntax were based on C).
+    To learn how to convert between human readable numeric values and internal numeric values and vice-versa.
+    To become comfortable working in various number bases.
+    To learn a little about C pointers.
+    To practice recursion.
+
+First read the Getting Started and Completing the Code sections below and then study the documentation for numconv.h in the Files tab to understand the details of the assignment. In addition, these two references provide additional information:
+
+    Number Systems by Dr. Sanjay Rajopadhye. Includes section dealing with fractions.
+    Number Conversion by Fritz Sieker
+
+Getting Started
+Perform the following steps
+3
+    Create a directory for this assignment. A general scheme might be to have a directory for each CS class you are taking and beneath that, a directory for each assignment. The name of the directory is arbitrary, but you may find it useful to name it for the assignment (e.g. P1).
+    Copy the three files below into this directory. It is easiest to right click on the link, and do a Save Target As.. for each of the files.
+        numconv.h (do not modify)
+        numconv.c (complete this file)
+        testConv.c (do not modify)
+    Open a terminal and make sure you are in the directory you created in step 1. The cd command can be used for this.
+    In the terminal type the following command to build the executable:
+
+
+        gcc -std=c11 -g -Wall numconv.c testConv.c -o testConv
+        
+
+    This command performs both the compilation and linking steps. You must run this command every time you make a change to your file.
+
+    In the terminal type ./testConv and read how to run the the program. There are 6 functions which you must implement. The testConv program will call one of your functions depending on the arguments that you pass. For example, if you type ./testConv i2c 2 6, your int2char(...) function will be called with the parameters 2 and 6. This allows you to test one function at a time.
+
+You now have a functioning program. All the commands (i2c, c2i, etc.) do something. However, none will produce correct results at this point.
+Completing the Code
+Before attempting to write any of the functions of numconv.c, study the documentation found in the Files tab. You are especially interested in the documentation for numconv.h. Notice that this file contains function declarations. For example:
+
+
+    int char2int (int radix, char digit);
+    
+
+A declaration lacks a function body. It simply tells the compiler the name of the function and the parameters that it takes. The actual function body is defined in numconv.c. This is a common practice in C: we have a .h file that declares the functions just to tell the compiler that they exist, and then we have a .c file that defines them (specifies what they do). In this exercise, numconv.h is included by both numconv.c and testConv.c. That way, testConv.c knows about the existence of the functions defined in numconv.c.
+
+Plan what you need to do before writing code!
+
+The best way to complete the code is to follow a write/compile/test sequence. Do not attempt to write everything at once. Rather, choose one function and do the following steps.
+
+    Write some/all of one function in numconv.c using your favorite editor.
+    Save your changes and recompile numconv.c using the command shown above. You may find it convenient to work with both a terminal and editor window at the same time.
+    Repeat steps 1 and 2 until there are no errors or warnings.
+    Test the function you have been working on. Do not attempt to move on until you complete and thoroughly test a function. You will find that the function int2char() is called in the int2ascii() function and that char2int() is useful in ascii2int(). Therefore, you might write the functions in the following order:
+        int2char()
+        char2int()
+        divRem()
+        ascii2int()
+        int2ascii() make sure this function does not print leading zeroes!
+        frac2double() [Extra Credit]
+    Repeat steps 1 thru 4 for the remaining functions.
+
+The divRem() function
+Remember how we used a pointer in P1 to return a value from a function? The divRem() function computes the quotient and remainder and returns both to the caller using two pointers. The result is that the function is able to return multiple values to the caller. The caller passes pointers to the addresses where it wants the results stored and the function uses the dereference operator to store the values. This is the same way the functions in the P1 assignment used to return the area of a figure. Review your notes from class and study how pointers are used in testConv.c.
+
+You may implement this function however you want, including using the C operators for division and modulus (/ %). However, a good exercise is to implement it using repeated subtraction.
+Guidelines
+This program is more about thinking than it is about writing code. Here are the lengths in lines of code for our solution (including blank lines and comments):
+
+    int2char(): 6 lines
+    char2int(): 13 lines
+    divRem(): 2 lines (not the iterative solution)
+    ascii2int(): 3 lines
+    int2ascii(): 6 lines
+    frac2double(): 3 lines
+
+Take these as guidelines, not specifications. Depending on your style, you may get more or fewer lines of code.
+
+Refer to the following videos where Andres talks about the functions and gives you tips:
+
+    int2char() and char2int(): click here (make sure to look at the corrections in the video description)
+    divRem(): click here
+    ascii2int(): click here
+    int2ascii(): click here
+    frac2double(): no video for this function (extra credit function)
+
+Specifications
+Your program must meet the following specifications:
+
+    Work on your own, as always.
+    The name of the source code file must be exactly numconv.c.
+    Name the file exactly - upper and lower case matters!
+    Change the your name goes here comment at the top of numconv.c.
+    Make sure your code runs on machines in the CS 120 lab.
+    Submit your program to the Checkin tab on the website.
+    Read the syllabus for the late policy.
+    We will be checking programs for plagiarism, so please don't copy from anyone else. 
+
+Grading Criteria
+
+    100 points for perfect submission.
+    0 points for no submission, will not compile, submitted class file, etc.
+    Each test can make multiple calls to the function being tested, with different values.
+    Preliminary Tests
+        testCompile: checks that program compiles cleanly (without warnings). (5 points)
+        test1: calls int2char with radix 10 and a value between 0..9. (2.5 points)
+        test2: calls int2char with radix 36 and a value between 10..35. (5 points)
+        test3: calls int2char with radix 20 and the value 20, an error case (1.25 points)
+        test4: calls int2char with radix 16 and the value 21, an error case (1.25 points)
+        test5: calls char2int with radix 8 and a digit between '0'..'7'. (2.5 points)
+        test6: calls char2int with radix 23 and a digit between 'A'..'M'. (5 points)
+        test7: calls char2int with radix 24 and a digit between 'a'..'n'. (5 points)
+        test8: calls char2int with radix 19 and the digit 'J', an error case. (1.25 points)
+        test9: calls char2int with radix 17 and the digit 'Z', an error case. (1.25 points)
+        test10: calls char2int with radix 20 and the digit 'k', an error case. (1.25 points)
+        test11: calls char2int with radix 18 and the digit 's', an error case. (1.25 points)
+        test12: calls char2int with radix 8 and the digit '9', an error case. (1.25 points)
+        test13: calls char2int with radix 12 and the digit '!', an error case. (1.25 points) 
+    Final Tests
+        We will test divRem, int2ascii, ascii2int, and frac2double. The frac2double function is worth 10 points of extra credit. 
+    Final grading includes the preliminary tests. 
+
+Submit the single file numconv.c to the Checkin tab on the course website, as you were shown in the recitation. 
