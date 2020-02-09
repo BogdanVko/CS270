@@ -87,7 +87,10 @@ return -1;
 
 /** @todo Implement based on documentation contained in iFloat.h */
 iFloat_t floatAbs (iFloat_t x) {
-  return x & 0b0111111111111111;
+  if (x == 0.0){
+    return 0.0;
+  }
+  return (x & 0b0111111111111111);
 }
 
 /** @todo Implement based on documentation contained in iFloat.h */
@@ -103,6 +106,8 @@ return x | 0b1000000000000000;
 iFloat_t floatAdd (iFloat_t x, iFloat_t y) {
   debug("%s: bits of x (IEEE 754)", getBinary(x)); // example only
   debug("%s: bits of y (IEEE 754)", getBinary(y)); // example only
+  debug("%d: x (IEEE 754)", x); // example only
+  debug("%d: y (IEEE 754)", y); // example only
   if (x == 0.0){
     return y;
   }
@@ -110,7 +115,7 @@ iFloat_t floatAdd (iFloat_t x, iFloat_t y) {
     return x;
   }
 
-
+  
   // Step 1: Extract the  values;
   short int sign_of_x = 0;
   short int sign_of_y = 0;
@@ -182,52 +187,99 @@ iFloat_t floatAdd (iFloat_t x, iFloat_t y) {
   debug("New Val X %s", getBinary(val_of_x));
   //compute the final metissa
 
-  iFloat_t val_raw_result = val_of_x + val_of_y;
-
+  short int val_raw_result = val_of_x + val_of_y;
+  debug("new matissa %s", getBinary(val_raw_result));
 if (val_raw_result == 0)
   {
     return 0.0;
   }
-  
 
-  debug("Val_raw   %s",getBinary(val_raw_result));
-  iFloat_t sign_result = 0;
-  iFloat_t val_result_abs = val_raw_result;
-  iFloat_t res_exp = largest_exponent_value;
-  debug("Final exponent, before shift : %s", getBinary(res_exp));
-  //IF THE RESULT IS NEG, GET ABS VAL and 
+  short int sign_of_res = 0;
+  //perform 2's comp
 
-  //int new_sign = val_raw_result & 0b1000000000000000;
-  //debug("new Sign %d", new_sign);
-  if (val_raw_result < 0){
-    sign_result = 1;
-    debug("2s comp val %s", getBinary(val_result_abs)); 
-    val_result_abs = (~val_raw_result) + 0b0000000000000001;
+  if (floatLeftMost1(val_raw_result) == 15){
+    debug("performing 2's comp on %s since it's neg", getBinary(val_raw_result));
+    val_raw_result = ~val_raw_result + 1;
+    sign_of_res = 1;
+    debug("done performing 2's comp. the value is now %s", getBinary(val_raw_result));
   }
-  debug("Val_raw after checking for -  %s",getBinary(val_raw_result));
   
-  //normalize the metisaa and the exponent
-  iFloat_t norm_val = val_result_abs << exponent_difference;
-  //res_exp = res_exp - exponent_difference;
-  debug("final exponent: %s", getBinary(res_exp));
-  iFloat_t mask_for_sign = sign_result << 15;
-  iFloat_t mask_for_res_exp = res_exp << 10;
-  iFloat_t mask_for_val = norm_val;
-  mask_for_val = mask_for_val & 0b1111101111111111;
-  debug("Signmask %s ", getBinary(mask_for_sign));
-  debug("Exp mask %s ", getBinary(mask_for_res_exp));
-  debug("Val Mask %s ", getBinary(mask_for_val));
-  iFloat_t result = 0b0000000000000000;
-  result = result | mask_for_sign;
-  result = result | mask_for_res_exp;
-  result = result | mask_for_val;
+  iFloat_t ready_val = val_raw_result;
+  int leftmost_1_of_val = floatLeftMost1(val_raw_result);
+  int final_val;
+  //shifting to 10 if necassary;
+  if (leftmost_1_of_val > 10){
+    debug("preparting to shift left leftmost1 to pos 10 of %s now", getBinary(val_raw_result));
+    int shift_by = leftmost_1_of_val - 10;
+    debug("Will be shifting by %d positions", shift_by);
+    ready_val = ready_val >> shift_by;
+     debug("shifted leftmost1 to pos 10 now %s", getBinary(ready_val));
+    ready_val = ready_val & 0b0000001111111111;
+    largest_exponent_value += shift_by;
+    final_val = ready_val;
+  }
+  else if (leftmost_1_of_val < 10){
+    debug("preparting to shift right leftmost1 to pos 10 of %s now", getBinary(val_raw_result));
+    int amount_of_shift_val = 10 - leftmost_1_of_val;
+    debug("Will be shifting by %d positions", amount_of_shift_val);
+    short int ready_val = val_raw_result << amount_of_shift_val;
+    debug("shifted leftmost1 to pos 10 now %s", getBinary(ready_val));
+    ready_val = ready_val & 0b0000001111111111;
+    debug("Is the bug here?? %s", getBinary(ready_val));
+    largest_exponent_value -= amount_of_shift_val;
+    final_val = ready_val;
+
+  } else {
+    ready_val = ready_val & 0b0000001111111111;
+    final_val = ready_val;
+  }
+ 
+  debug("matissa about to be placed in result is %s" ,getBinary(ready_val));
+  debug("the other matissa %s", getBinary(final_val));
 
 
+  short int ready_exp = largest_exponent_value;
+  short int ready_sign = sign_of_res;
+  debug("Exp of res %s", getBinary(ready_exp << 10));
+  debug("Sign of res %s", getBinary(ready_sign));
+ 
+  debug("matissa about to be placed in result is %s" ,getBinary(ready_val));
+  short int result = sign_of_res << 15;
+  result = result | final_val;
+  result = result | (ready_exp << 10);
+
+  
   return result;
 }
 
 /** @todo Implement based on documentation contained in iFloat.h */
-iFloat_t floatSub (iFloat_t x, iFloat_t y) {
-  return 0;
+iFloat_t floatSub (iFloat_t x, iFloat_t y) {\
+  if (x == 0){return y;}
+  if (y == 0){return x;}
+
+  if (x < 0 && y < 0){
+    debug("got here 1");
+    // -x - -y
+    return floatAdd(x,floatAbs(y));
+  }
+  else if(x > 0 && y < 0 ){ 
+    // x --y == x + y
+    debug("got here 2");
+    return floatAdd(x,floatAbs( y));
+
+  }
+  else if (x < 0 && y > 0) {
+  debug("got here 3");
+   // -x - +y == -x + -y
+   return floatAdd(x, floatNegate(y));
+
+  } else if (x > 0 && y > 0){
+    // x - y = x + -y;
+    debug("got here 4");
+    return floatAdd(x, floatNegate(y));
+
+  }
+  
+  return 0.0;
 }
 
