@@ -65,14 +65,14 @@ sym_table_t* symbol_init (int capacity) {
   t->hash_table = calloc(capacity,sizeof(node_t*));
   t->addr_table = calloc(2^16, sizeof(char*));
 
-  return &t;
+  return t;
 }
 
 /** @todo implement this function */
 void symbol_term (sym_table_t* symTab) {
   free(symTab->hash_table);
   free(symTab->addr_table);
-  free(*symTab);
+  free(symTab);
 }
 
 /** @todo implement this function */
