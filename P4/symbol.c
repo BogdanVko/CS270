@@ -16,11 +16,11 @@
  *  110 lines of code to this file. This count includes lines containing
  *  only a single closing bracket (}).
  * <p>
- * @author <b>Your name</b> goes here
+ * @author Bogdan Vasilchenko
  */
 
 /** size of LC3 memory */
-#define LC3_MEMORY_SIZE  (1 << 16)
+#define LC3_MEMORY_SIZE  (1 << 16) // 16 bit
 
 /** Provide prototype for strdup() */
 char *strdup(const char *s);
@@ -59,11 +59,20 @@ static int symbol_hash (const char* name) {
 
 /** @todo implement this function */
 sym_table_t* symbol_init (int capacity) {
-  return NULL;
+  sym_table_t *t = malloc(sizeof(sym_table_t));
+  t->capacity = capacity;
+
+  t->hash_table = calloc(capacity,sizeof(node_t*));
+  t->addr_table = calloc(2^16, sizeof(char*));
+
+  return &t;
 }
 
 /** @todo implement this function */
 void symbol_term (sym_table_t* symTab) {
+  free(symTab->hash_table);
+  free(symTab->addr_table);
+  free(*symTab);
 }
 
 /** @todo implement this function */
