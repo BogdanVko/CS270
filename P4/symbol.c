@@ -72,21 +72,125 @@ sym_table_t* symbol_init (int capacity) {
 void symbol_term (sym_table_t* symTab) {
   free(symTab->hash_table);
   free(symTab->addr_table);
+  symTab->size = 0;
   free(symTab);
 }
 
 /** @todo implement this function */
 void symbol_reset(sym_table_t* symTab) {
+  //unsure
+  free(symTab->hash_table);
+  free(symTab->addr_table);
+  symTab->size = 0;
 }
 
 /** @todo implement this function */
 int symbol_add (sym_table_t* symTab, const char* name, int addr) {
-  return 0;
+  int x = symbol_hash(name);
+  int *hash = &x;
+  int *index = (*hash % symTab->capacity);
+  //int *index = &y;
+
+  node_t *searched_node = symbol_search(&symTab, &name, &hash, &index);
+
+  //  symbol_search(sym_table_t* symTab, const char* name, int* hash, int* index) 
+  if (searched_node != NULL)
+  {
+      return 0;
+  }
+  /*symTab->size++;
+  node_t *new_node = malloc(sizeof(node_t));
+  new_node->hash = *hash;
+
+  symbol_t *s = malloc(sizeof(symbol_t));
+  s->name = name; 
+  s->addr = addr;
+  
+  new_node->symbol = *s;
+  symTab->addr_table[*index] = addr;
+
+
+
+  if (symTab->hash_table[*index] == NULL)
+  {
+    symTab->hash_table[*index] = new_node;
+    new_node->next = NULL;
+  }else
+  {
+    node_t *tmp = symTab->hash_table[*index];
+    symTab->hash_table[*index] = new_node;
+    new_node->next = tmp;
+  }
+ 
+  
+  */
+
+  return 1;
 }
 
 /** @todo implement this function */
 struct node* symbol_search (sym_table_t* symTab, const char* name, int* hash, int* index) {
   *hash = symbol_hash(name);
+  *index = (*hash % symTab->capacity);
+  node_t *slot = (symTab->hash_table[*index]);
+  debug("%s", slot->symbol.name);
+  if (slot == NULL){
+    return NULL;
+  
+  }
+  if (slot->hash == *hash)
+  {
+    return slot;
+    
+  }
+  else {
+    node_t *curr;
+    node_t *next;
+    while (1)
+    {
+      curr = slot;
+      next = slot->next;
+      if(curr->hash != NULL && curr->hash != *hash){
+        curr = next;
+        next = curr->next;
+        
+      }
+      if (curr->hash == *hash)
+      {
+        if (*curr->symbol.name == *name)
+        {
+          return curr;
+          break;
+        }
+        
+        
+      }
+      if (next->hash == *hash)
+      {
+        if (*next->symbol.name == *name)
+        {
+          return next;
+          break;
+        }
+      }
+      if (curr == NULL){
+        return NULL;
+        break;
+      }
+      if (next == NULL)
+      {
+        return NULL;
+        break;
+      }
+      
+
+      curr = next;
+      next = curr->next;
+    }
+    
+  }
+  
+
   return NULL;
 }
 

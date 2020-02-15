@@ -8,7 +8,7 @@
  *  should be declared <b>static</b> to indicate they are only used
  *  within this file.
  *  <p>
- *  @author <b>Bogdan</b> goes here
+ *  @author <b>Bogdan</b> 
  */
 
 /* declaration for useful function contained in testFloat.c */
