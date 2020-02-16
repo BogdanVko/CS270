@@ -6,7 +6,7 @@
 
 #include "Debug.h"
 #include "symbol.h"
-
+/** NOTE: This shit fucks one up stronger than 2 bottles of Vodka**/
 /** @file symbol.c
  *  @brief You will modify this file and implement the symbol.h interface
  *  @details Your implementation of the functions defined in symbol.h.
@@ -201,7 +201,7 @@ int compare_names (const void* vp1, const void* vp2) {
 
   return 0;
 }
-
+ 
 /** @todo implement this function */
 int compare_addresses (const void* vp1, const void* vp2) {
   return 0;
