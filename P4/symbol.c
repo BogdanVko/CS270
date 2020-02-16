@@ -59,139 +59,111 @@ static int symbol_hash (const char* name) {
 
 /** @todo implement this function */
 sym_table_t* symbol_init (int capacity) {
-  sym_table_t *t = malloc(sizeof(sym_table_t));
+  sym_table_t *t = (sym_table_t*) calloc(1,sizeof(sym_table_t));
   t->capacity = capacity;
 
-  t->hash_table = calloc(capacity,sizeof(node_t*));
-  t->addr_table = calloc(2^16, sizeof(char*));
+  t->hash_table = (node_t**) calloc(capacity,sizeof(node_t*));
+  t->addr_table = (char**) calloc(LC3_MEMORY_SIZE, sizeof(char*));
 
   return t;
 }
 
 /** @todo implement this function */
 void symbol_term (sym_table_t* symTab) {
+  //symbol_reset(symTab);
+  
   free(symTab->hash_table);
+  
   free(symTab->addr_table);
-  symTab->size = 0;
+
   free(symTab);
 }
 
-/** @todo implement this function */
+
 void symbol_reset(sym_table_t* symTab) {
-  //unsure
-  free(symTab->hash_table);
-  free(symTab->addr_table);
+  int capacity = symTab->capacity;
   symTab->size = 0;
+	free(symTab->hash_table);
+  free(symTab->addr_table);
+
+  symTab->hash_table = (node_t**) calloc(capacity,sizeof(node_t*));
+  symTab->addr_table = (char**) calloc(LC3_MEMORY_SIZE, sizeof(char*));
+	
+	
+
 }
+
 
 /** @todo implement this function */
 int symbol_add (sym_table_t* symTab, const char* name, int addr) {
   int x = symbol_hash(name);
-  int *hash = &x;
-  int *index = (*hash % symTab->capacity);
+  int *hash;
+  hash = &x;
+  int y = (*hash % symTab->capacity);
+  int *index;
+  index = &y;
   //int *index = &y;
 
-  node_t *searched_node = symbol_search(&symTab, &name, &hash, &index);
-
+  node_t *searched_node = symbol_search(symTab, name, hash, index);
+  
   //  symbol_search(sym_table_t* symTab, const char* name, int* hash, int* index) 
   if (searched_node != NULL)
   {
       return 0;
   }
-  /*symTab->size++;
-  node_t *new_node = malloc(sizeof(node_t));
-  new_node->hash = *hash;
-
-  symbol_t *s = malloc(sizeof(symbol_t));
-  s->name = name; 
-  s->addr = addr;
   
-  new_node->symbol = *s;
-  symTab->addr_table[*index] = addr;
+  // So it's not there; Cool
+  symTab->size++; //increase the size of symTab by 1
+  node_t* new_node = (node_t*) malloc(sizeof(node_t)); 
+  new_node->hash = symbol_hash(name); 
+
+	new_node->symbol.addr = addr;
+	new_node->symbol.name = strdup(name); 
 
 
+	new_node->next = symTab->hash_table[*index];
+	symTab->hash_table[*index] = new_node;	//link 
 
-  if (symTab->hash_table[*index] == NULL)
-  {
-    symTab->hash_table[*index] = new_node;
-    new_node->next = NULL;
-  }else
-  {
-    node_t *tmp = symTab->hash_table[*index];
-    symTab->hash_table[*index] = new_node;
-    new_node->next = tmp;
-  }
- 
+
+  debug("size + 1. Size is%d\n", symTab->size);
   
-  */
+  
+		
+	if (symTab->addr_table[addr] == NULL){ 		
+			symTab->addr_table[addr] = strdup(name); 
+		}
 
   return 1;
 }
 
 /** @todo implement this function */
 struct node* symbol_search (sym_table_t* symTab, const char* name, int* hash, int* index) {
+  
   *hash = symbol_hash(name);
-  *index = (*hash % symTab->capacity);
-  node_t *slot = (symTab->hash_table[*index]);
-  debug("%s", slot->symbol.name);
-  if (slot == NULL){
-    return NULL;
-  
-  }
-  if (slot->hash == *hash)
-  {
-    return slot;
-    
-  }
-  else {
-    node_t *curr;
-    node_t *next;
-    while (1)
-    {
-      curr = slot;
-      next = slot->next;
-      if(curr->hash != NULL && curr->hash != *hash){
-        curr = next;
-        next = curr->next;
-        
-      }
-      if (curr->hash == *hash)
-      {
-        if (*curr->symbol.name == *name)
-        {
-          return curr;
-          break;
-        }
-        
-        
-      }
-      if (next->hash == *hash)
-      {
-        if (*next->symbol.name == *name)
-        {
-          return next;
-          break;
-        }
-      }
-      if (curr == NULL){
-        return NULL;
-        break;
-      }
-      if (next == NULL)
-      {
-        return NULL;
-        break;
-      }
+  *index = *hash % symTab->capacity;
+  node_t *slot = (symTab->hash_table[*index]); // AM I NOT CLEARING THIS OUT??
+  //debug("Recieved a node %s with a hash %d\n", slot->symbol.name, slot->hash);
+  debug("echo\n");
+
+  while(slot != NULL){ 
+    debug("while loop\n");
+		if(*hash == slot->hash){
+      debug("hashes are equal\n");
+		  char *real_name = strdup(name); 
       
+		  char *slots_name = strdup(slot->symbol.name); 
+      
+			if(*real_name == *slots_name) { //the problem 
+        debug("equal names! should return slot, not null");
+        return slot;
+      }
 
-      curr = next;
-      next = curr->next;
-    }
-    
-  }
-  
+				 
+		}
+slot = slot->next; ///Update to next. Treaverse in the list
+	}
 
-  return NULL;
+	return NULL;
 }
 
 /** @todo implement this function */
@@ -206,6 +178,16 @@ char* symbol_find_by_addr (sym_table_t* symTab, int addr) {
 
 /** @todo implement this function */
 void symbol_iterate (sym_table_t* symTab, iterate_fnc_t fnc, void* data) {
+
+
+  for(int i = 0; i < symTab->capacity; i++){    
+		node_t* curr = symTab->hash_table[i];   
+		
+		while(curr != NULL){	    
+			(*fnc)(&curr->symbol,data);
+			curr=curr->next;
+		}
+	}
 }
 
 /** @todo implement this function */
