@@ -1,0 +1,8 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	Result            3003
+//	IntMul            3000
+//	Param1            3001
+//	Param2            3002

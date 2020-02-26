@@ -1,0 +1,8 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	Val1              3005
+//	Val2              3006
+//	Point1            3003
+//	Point2            3004

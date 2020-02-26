@@ -1,0 +1,6 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	Label1            3005
+//	Label2            3006

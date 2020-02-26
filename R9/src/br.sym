@@ -1,0 +1,9 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	Skip2             3007
+//	Skip              3005
+//	Loop              300A
+//	Loop2             300F
+//	LoopEnd           300E
