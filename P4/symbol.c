@@ -6,7 +6,7 @@
 
 #include "Debug.h"
 #include "symbol.h"
-
+/** NOTE: This shit fucks one up stronger than 2 bottles of Vodka**/
 /** @file symbol.c
  *  @brief You will modify this file and implement the symbol.h interface
  *  @details Your implementation of the functions defined in symbol.h.
@@ -59,35 +59,111 @@ static int symbol_hash (const char* name) {
 
 /** @todo implement this function */
 sym_table_t* symbol_init (int capacity) {
-  sym_table_t *t = malloc(sizeof(sym_table_t));
+  sym_table_t *t = (sym_table_t*) calloc(1,sizeof(sym_table_t));
   t->capacity = capacity;
 
-  t->hash_table = calloc(capacity,sizeof(node_t*));
-  t->addr_table = calloc(2^16, sizeof(char*));
+  t->hash_table = (node_t**) calloc(capacity,sizeof(node_t*));
+  t->addr_table = (char**) calloc(LC3_MEMORY_SIZE, sizeof(char*));
 
   return t;
 }
 
 /** @todo implement this function */
 void symbol_term (sym_table_t* symTab) {
+  //symbol_reset(symTab);
+  
   free(symTab->hash_table);
+  
   free(symTab->addr_table);
+
   free(symTab);
 }
 
-/** @todo implement this function */
+
 void symbol_reset(sym_table_t* symTab) {
+  int capacity = symTab->capacity;
+  symTab->size = 0;
+	free(symTab->hash_table);
+  free(symTab->addr_table);
+
+  symTab->hash_table = (node_t**) calloc(capacity,sizeof(node_t*));
+  symTab->addr_table = (char**) calloc(LC3_MEMORY_SIZE, sizeof(char*));
+	
+	
+
 }
+
 
 /** @todo implement this function */
 int symbol_add (sym_table_t* symTab, const char* name, int addr) {
-  return 0;
+  int x = symbol_hash(name);
+  int *hash;
+  hash = &x;
+  int y = (*hash % symTab->capacity);
+  int *index;
+  index = &y;
+  //int *index = &y;
+
+  node_t *searched_node = symbol_search(symTab, name, hash, index);
+  
+  //  symbol_search(sym_table_t* symTab, const char* name, int* hash, int* index) 
+  if (searched_node != NULL)
+  {
+      return 0;
+  }
+  
+  // So it's not there; Cool
+  symTab->size++; //increase the size of symTab by 1
+  node_t* new_node = (node_t*) malloc(sizeof(node_t)); 
+  new_node->hash = symbol_hash(name); 
+
+	new_node->symbol.addr = addr;
+	new_node->symbol.name = strdup(name); 
+
+
+	new_node->next = symTab->hash_table[*index];
+	symTab->hash_table[*index] = new_node;	//link 
+
+
+  debug("size + 1. Size is%d\n", symTab->size);
+  
+  
+		
+	if (symTab->addr_table[addr] == NULL){ 		
+			symTab->addr_table[addr] = strdup(name); 
+		}
+
+  return 1;
 }
 
 /** @todo implement this function */
 struct node* symbol_search (sym_table_t* symTab, const char* name, int* hash, int* index) {
+  
   *hash = symbol_hash(name);
-  return NULL;
+  *index = *hash % symTab->capacity;
+  node_t *slot = (symTab->hash_table[*index]); // AM I NOT CLEARING THIS OUT??
+  //debug("Recieved a node %s with a hash %d\n", slot->symbol.name, slot->hash);
+  debug("echo\n");
+
+  while(slot != NULL){ 
+    debug("while loop\n");
+		if(*hash == slot->hash){
+      debug("hashes are equal\n");
+		  char *real_name = strdup(name); 
+      
+		  char *slots_name = strdup(slot->symbol.name); 
+      
+			if(*real_name == *slots_name) { //the problem 
+        debug("equal names! should return slot, not null");
+        return slot;
+      }
+
+				 
+		}
+slot = slot->next; ///Update to next. Treaverse in the list
+	}
+
+	return NULL;
 }
 
 /** @todo implement this function */
@@ -102,6 +178,16 @@ char* symbol_find_by_addr (sym_table_t* symTab, int addr) {
 
 /** @todo implement this function */
 void symbol_iterate (sym_table_t* symTab, iterate_fnc_t fnc, void* data) {
+
+
+  for(int i = 0; i < symTab->capacity; i++){    
+		node_t* curr = symTab->hash_table[i];   
+		
+		while(curr != NULL){	    
+			(*fnc)(&curr->symbol,data);
+			curr=curr->next;
+		}
+	}
 }
 
 /** @todo implement this function */
@@ -115,7 +201,7 @@ int compare_names (const void* vp1, const void* vp2) {
 
   return 0;
 }
-
+ 
 /** @todo implement this function */
 int compare_addresses (const void* vp1, const void* vp2) {
   return 0;
