@@ -106,7 +106,13 @@ End_strcmp  HALT                    ; done - examine output
 ; on entry R0 contains first value, R1 contains second value
 ; on exit  R0 = (R0 << 8) | (R1 & 0xFF)
 
-pack        ; fill in your code, ~11 lines of code
+pack        
+        ; Shift R0 left by 8
+        ;R1 = R1 and FF
+        ; OR R0 with R1, store in R0
+        
+
+; fill in your code, ~11 lines of code
             RET
 
 ;------------------------------------------------------------------------------
