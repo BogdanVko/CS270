@@ -168,12 +168,34 @@ slot = slot->next; ///Update to next. Treaverse in the list
 
 /** @todo implement this function */
 symbol_t* symbol_find_by_name (sym_table_t* symTab, const char* name) {
-  return NULL;
+  int x = symbol_hash(name);
+  int *hash;
+  hash = &x;
+  int y = (*hash % symTab->capacity);
+  int *index;
+  index = &y;
+  //int *index = &y;
+
+  node_t *searched_node = symbol_search(symTab, name, hash, index);
+  if(searched_node != NULL){
+    symbol_t* sym = &searched_node->symbol; 
+    return sym;
+
+  }
+  else {
+    return NULL;
+  }
 }
 
 /** @todo implement this function */
 char* symbol_find_by_addr (sym_table_t* symTab, int addr) {
-  return NULL;
+  if (symTab->addr_table[addr] != NULL)
+  {
+    return  symTab->addr_table[addr];
+}
+  
+  
+   return NULL;
 }
 
 /** @todo implement this function */
@@ -192,24 +214,92 @@ void symbol_iterate (sym_table_t* symTab, iterate_fnc_t fnc, void* data) {
 
 /** @todo implement this function */
 int symbol_size (sym_table_t* symTab) {
-  return 0;
+  return symTab->size;
+}
+
+char *strlwr(char *str)
+{
+  char *p = str;
+
+  while (*p) {
+     *p = tolower((char)*p);
+      p++;
+  }
+
+  return str;
 }
 
 /** @todo implement this function */
 int compare_names (const void* vp1, const void* vp2) {
-  // symbol_t* sym1 = *((symbol_t**) vp1); // study qsort to understand this
+   symbol_t* sym1 = *((symbol_t**) vp1);
+   symbol_t* sym2 = *((symbol_t**) vp2);
+    /// declared 
 
-  return 0;
+
+
+   char* str1 = (sym1->name);
+   char* str2 = (sym2->name);
+   int result = strcasecmp(str1, str2);
+    
+   return result;
 }
  
 /** @todo implement this function */
 int compare_addresses (const void* vp1, const void* vp2) {
-  return 0;
+  symbol_t* sym1 = *((symbol_t**) vp1);
+  symbol_t* sym2 = *((symbol_t**) vp2);
+
+
+
+
+
+
+  int diff = (sym1->addr) - (sym2->addr);
+
+
+  if(diff != 0)
+    return diff;
+  else
+    return compare_names(&sym1, &sym2);
 }
+
 
 /** @todo implement this function */
 symbol_t** symbol_order (sym_table_t* symTab, int order) {
-  // will call qsort with either compare_names or compare_addresses
+  symbol_t** syms = (symbol_t**)calloc(symTab->size, sizeof(symbol_t*));
+
+
+
+  int ind = 0;
+  for(int i = 0; i < symTab->capacity; i++){
+      node_t* node = symTab->hash_table[i];
+      if(symTab->hash_table[i] == NULL)
+        continue;
+      while(node != NULL){
+          syms[ind] = &(node->symbol);
+          ind += 1;
+          if(node->next == NULL)
+            break;
+          else
+          node = node->next;
+      }
+        
+    }
+
+  if(order == HASH && syms[0] != NULL)
+      return syms;
+  else if(order == NAME && syms[0] != NULL){
+      qsort(syms, symTab->size, sizeof(symbol_t*), compare_names);
+      return syms;
+  }
+  else if(order == ADDR && syms[0] != NULL){
+      qsort(syms, symTab->size, sizeof(symbol_t*), compare_addresses);
+      return syms;
+  }
+  else
+        return NULL;
+
   return NULL;
+
 }
 
