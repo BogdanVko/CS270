@@ -42,6 +42,7 @@ Test_pack
             LD R1,Value2            ; load second character
             JSR pack                ; pack characters
             ST R0,Result            ; save packed result
+            MY_BREAK
 End_pack    HALT                    ; done - examine Result
 
 Test_unpack 
@@ -107,9 +108,33 @@ End_strcmp  HALT                    ; done - examine output
 ; on exit  R0 = (R0 << 8) | (R1 & 0xFF)
 
 pack        
+        
         ; Shift R0 left by 8
-        ;R1 = R1 and FF
+        ADD R0, R0, R0 ;1
+        ADD R0, R0, R0 ;2
+        ADD R0, R0, R0 ;3
+        ADD R0, R0, R0 ;4
+        ADD R0, R0, R0 ;5
+        ADD R0, R0, R0 ;6
+        ADD R0, R0, R0 ;7
+        ADD R0, R0, R0 ;8
+        
+        ;init R3 and set to 0
+        AND R3, R3, #0
+
+
+        ;ADD R3, R3, xFF this is out of bounce
+        ;AND R1, R1, R3 ; this doesn't make sense. R1 just becomes 0
         ; OR R0 with R1, store in R0
+        ; R0 OR R1 = NOT [(NOT R0) AND (NOT R1)]
+        NOT R0, R0
+		NOT R1, R1
+
+        AND R2, R1, R0 ; R2 = not R0 and not R1
+        ; not (not R0 and not R1)
+		NOT R2, R2
+        	 ; unsure if I sould use R2 
+		LDR R0, R2, #0 ;store val of R2 in R0 DOESN"T WORK
         
 
 ; fill in your code, ~11 lines of code

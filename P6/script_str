@@ -1,0 +1,7 @@
+file string.obj
+memory Option 0
+memory Value1 x13
+memory Value2 x30
+break set x3019
+translate x5
+translate Result
