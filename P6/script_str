@@ -1,7 +1,7 @@
 file string.obj
 memory Option 0
-memory Value1 x13
-memory Value2 x30
-break set x3019
-translate x5
+memory Value1 x1332
+memory Value2 x3022
+break set MY_BREAK
+continue
 translate Result

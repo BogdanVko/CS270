@@ -105,7 +105,8 @@ End_strcmp  HALT                    ; done - examine output
 
 ;------------------------------------------------------------------------------
 ; on entry R0 contains first value, R1 contains second value
-; on exit  R0 = (R0 << 8) | (R1 & 0xFF)
+; on exit  R0 = (R0 << 8) | (R1 & 0xFF) 111111111   ||| (R0 >> 8);   Same thing with R1
+LABEL .FILL xFF
 
 pack        
         
@@ -120,11 +121,11 @@ pack
         ADD R0, R0, R0 ;8
         
         ;init R3 and set to 0
-        AND R3, R3, #0
+        LD R3, LABEL
 
-
-        ;ADD R3, R3, xFF this is out of bounce
-        ;AND R1, R1, R3 ; this doesn't make sense. R1 just becomes 0
+        
+         
+        AND R1, R1, R3 ; this doesn't make sense. R1 just becomes 0
         ; OR R0 with R1, store in R0
         ; R0 OR R1 = NOT [(NOT R0) AND (NOT R1)]
         NOT R0, R0
@@ -133,8 +134,10 @@ pack
         AND R2, R1, R0 ; R2 = not R0 and not R1
         ; not (not R0 and not R1)
 		NOT R2, R2
+        ADD R0, R2, #0
+
         	 ; unsure if I sould use R2 
-		LDR R0, R2, #0 ;store val of R2 in R0 DOESN"T WORK
+		;LDR R0, R2, #0 ;store val of R2 in R0 DOESN"T WORK
         
 
 ; fill in your code, ~11 lines of code
