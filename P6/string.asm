@@ -125,7 +125,7 @@ pack
 
         
          
-        AND R1, R1, R3 ; this doesn't make sense. R1 just becomes 0
+        AND R1, R1, R3 ; this 
         ; OR R0 with R1, store in R0
         ; R0 OR R1 = NOT [(NOT R0) AND (NOT R1)]
         NOT R0, R0
@@ -148,6 +148,49 @@ pack
 ; on exit  (see instructions)
 
 unpack      ; fill in your code, ~14 lines of code
+
+RightShift                           ; Result is Param1 >> Param2
+                                     ; (Fill vacant positions with 0's)
+                		;load parameters -number to shift
+	AND R1, R1, #0
+    ADD R1, R1, #8    	;MUST BE 8
+
+
+	AND R2, R2, #0		; 0000 0000 0000 0000
+	AND R3, R3, #0		; 0000 0000 0000 0001 
+	ADD R3, R3, #1		
+	AND R4, R4, #0		 ;0000 0000 0000 0001 
+	ADD R4, R4, #1
+
+	
+	
+maskloop	
+	ADD R3, R3, R3		
+	ADD R1, R1, #-1 	
+	BRp maskloop 		;if 0 go out
+	BR inspect
+
+shiftloop
+	ADD R4, R4, R4
+	ADD R3, R3, R3		;LEFT shift bits by one
+	BRz return_write
+	BR inspect
+
+inspect
+	AND R1, R3, R0		;inspect bit with da mask! Oh yeah
+				;getting super complicated. nxt look migh
+	BRz shiftloop
+	ADD R2, R4, R2		;where to put? R2
+	BR shiftloop				;shiftloop a little more
+return_write
+	
+    AND R0, R0, #0
+    ADD R0, R2, #0
+            		;store IN R0
+                RET
+
+
+
             RET
 
 ;------------------------------------------------------------------------------
@@ -159,6 +202,9 @@ StringZERO  .STRINGZ "ZERO\n"
 StringPOS   .STRINGZ "POSITIVE\n"
 
 printCC     ; fill in your code, ~11 lines of code
+
+
+
             RET
 
 ;------------------------------------------------------------------------------
@@ -167,6 +213,8 @@ printCC     ; fill in your code, ~11 lines of code
 ; on exit  (see instructions)
 
 strlen      ; fill in your code, ~7 lines of code
+
+
             RET
 
 ;------------------------------------------------------------------------------
@@ -175,6 +223,9 @@ strlen      ; fill in your code, ~7 lines of code
 ; on exit  (see instructions)
 
 strcpy      ; fill in your code, ~8 lines of code
+
+
+
             RET
 
 ;------------------------------------------------------------------------------
@@ -206,4 +257,5 @@ strcmp      ; fill in your code, ~12 lines of code
             RET
 
 ;------------------------------------------------------------------------------
+
             .END
