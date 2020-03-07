@@ -1,7 +1,6 @@
 file string.obj
-memory Option 0
-memory Value1 x1332
-memory Value2 x3022
-break set MY_BREAK
+memory Option 2
+memory Value1 -3
+break set End_printCC
 continue
-translate Result
+

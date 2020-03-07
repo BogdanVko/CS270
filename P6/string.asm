@@ -42,7 +42,6 @@ Test_pack
             LD R1,Value2            ; load second character
             JSR pack                ; pack characters
             ST R0,Result            ; save packed result
-            MY_BREAK
 End_pack    HALT                    ; done - examine Result
 
 Test_unpack 
@@ -106,7 +105,7 @@ End_strcmp  HALT                    ; done - examine output
 ;------------------------------------------------------------------------------
 ; on entry R0 contains first value, R1 contains second value
 ; on exit  R0 = (R0 << 8) | (R1 & 0xFF) 111111111   ||| (R0 >> 8);   Same thing with R1
-LABEL .FILL xFF
+FFs .FILL xFF
 
 pack        
         
@@ -121,7 +120,7 @@ pack
         ADD R0, R0, R0 ;8
         
         ;init R3 and set to 0
-        LD R3, LABEL
+        LD R3, FFs
 
         
          
@@ -147,15 +146,20 @@ pack
 ; on entry R0 contains a value
 ; on exit  (see instructions)
 
+ResOfRightShift .BLKW 1
+
+Reg0 .BLKW 1
+lastFFs .FILL x00FF
+Param2 .FILL #8
+Reg1 .BLKW 1
 unpack      ; fill in your code, ~14 lines of code
+    ST R0, Reg0
+    ST R1, Reg1
 
-RightShift                           ; Result is Param1 >> Param2
-                                     ; (Fill vacant positions with 0's)
-                		;load parameters -number to shift
-	AND R1, R1, #0
-    ADD R1, R1, #8    	;MUST BE 8
+    ;--------------------------------
 
-
+    LD R0, Reg0		;load parameters -number to shift
+	LD R1, Param2		;shift this many times
 	AND R2, R2, #0		; 0000 0000 0000 0000
 	AND R3, R3, #0		; 0000 0000 0000 0001 
 	ADD R3, R3, #1		
@@ -183,15 +187,25 @@ inspect
 	ADD R2, R4, R2		;where to put? R2
 	BR shiftloop				;shiftloop a little more
 return_write
-	
-    AND R0, R0, #0
-    ADD R0, R2, #0
-            		;store IN R0
-                RET
+   
+    
+	ST R2, ResOfRightShift		;store and return_write
+
+
+    ;  ------------------------------
+
+    LD R0, ResOfRightShift
+    LD R1, Reg0
+    ; I right shifted R0 so if it was 3478, now it's 0034
+    
+
+    LD R3, lastFFs
+    AND R1, R1, R3 
+    ;now if R0 was 3478, then now it's 0078
 
 
 
-            RET
+RET
 
 ;------------------------------------------------------------------------------
 ; on entry R0 contains value
@@ -200,11 +214,40 @@ return_write
 StringNEG   .STRINGZ "NEGATIVE\n"   ; output strings
 StringZERO  .STRINGZ "ZERO\n"
 StringPOS   .STRINGZ "POSITIVE\n"
-
+Register0 .BLKW 1
+Register7 .BLKW 1
 printCC     ; fill in your code, ~11 lines of code
+    ST R0, Register0
+    ST R7, Register7
+    ADD R0, R0, #0
+    BRn neg
+    ADD R0, R0, #0
+    BRp pos
+    
+    ADD R0, R0, #0
+    BRz zer
+    
+
+    BACK
+    PUTS
+    
+    LD R7, Register7
+    ADD R0, R0, #0
+    BRnzp return_point
+
+    pos
+    LEA R0, StringPOS
+    BRnzp BACK
+    neg
+    LEA R0, StringNEG
+    BRnzp BACK
+    zer
+    LEA R0, StringZERO
+    BRnzp BACK
 
 
-
+    return_point
+    LD R0, Register0
             RET
 
 ;------------------------------------------------------------------------------
@@ -258,4 +301,5 @@ strcmp      ; fill in your code, ~12 lines of code
 
 ;------------------------------------------------------------------------------
 
-            .END
+
+.END

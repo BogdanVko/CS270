@@ -146,7 +146,7 @@ shiftloop
 
 inspect
 	AND R1, R3, R0		;inspect bit with da mask! Oh yeah
-				;getting super complicated. nxt look migh
+				;getting super complicated. nxt look might be wrong.
 	BRz shiftloop
 	ADD R2, R4, R2		;where to put? R2
 	BR shiftloop				;shiftloop a little more
