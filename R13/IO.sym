@@ -1,0 +1,19 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	Result            3003
+//	read_ra           3019
+//	continue          3033
+//	convert           3028
+//	Prompt            300B
+//	String            3004
+//	convert_ra        3027
+//	read              301A
+//	digit             302F
+//	Four              3008
+//	loop0             301F
+//	loop1             302B
+//	Ascii0            300A
+//	AsciiA            3009
+//	letter            3032
