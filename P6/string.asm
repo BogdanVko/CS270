@@ -255,21 +255,36 @@ printCC     ; fill in your code, ~11 lines of code
 ; on entry R0 points to string
 ; on exit  (see instructions)
 
-strlen      ; fill in your code, ~7 lines of code
+strlen      ADD R1,R0,#0            ;init
+            .ZERO R2
+            
+                            
+test_end    LDR R3,R1,#0
 
+            BRz ret_loop
+            ADD R1,R1,#1
+            ADD R2,R2,#1
+            BR test_end
 
+ret_loop       ADD R0,R2,#0
             RET
-
 ;------------------------------------------------------------------------------
 ; char *strcpy(char *dest, char *src)
 ; on entry R0 points to destination string, R1 points to source string
 ; on exit  (see instructions)
 
-strcpy      ; fill in your code, ~8 lines of code
+strcpy  ADD R2,R0,#0            ; Pointer to dest
+            ADD R3,R1,#0            ; Pointer to src
+cat_cp       LDR R4,R3,#0            ; Lode a character to R4
+            BRz ret_strcp
 
+            STR R4,R2,#0            ; Store it to dest
+            ADD R2,R2,#1
+            ADD R3,R3,#1
+            BR cat_cp
+ret_strcp
 
-
-            RET
+        RET
 
 ;------------------------------------------------------------------------------
 ; char *strcat(char *dest, char *src)
@@ -284,6 +299,26 @@ strcat      ST R7,strcat_RA         ; save return address
             ST R0,strcat_dest       ; save dest
             ST R1,strcat_src        ; save src
 
+           
+            ADD R2,R0,#0           
+            ADD R3,R1,#0           ; every initration changes the rR
+loop_checker
+            LDR R4,R2,#0
+            BRz ld_stmp
+
+            ADD R2,R2,#1
+            BR loop_checker
+ld_stmp
+           LDR R4,R3,#0
+            BRz ret_cat ;if zero then ret
+
+            STR R4,R2,#0
+            ADD R2,R2,#1
+            ADD R3,R3,#1
+            BR ld_stmp
+
+ret_cat
+
             ; fill in your code, ~5 lines of code
             ; HINT: call strlen and strcpy
 
@@ -296,7 +331,59 @@ strcat      ST R7,strcat_RA         ; save return address
 ; on entry R0 points to first string, R1 points to second string
 ; on exit  (see instructions)
 
-strcmp      ; fill in your code, ~12 lines of code
+strcmp      
+
+
+            ADD R2,R0,#0           
+            ADD R3,R1,#0    
+            
+                    
+            .ZERO R0
+
+
+check_lp_1
+            LDR R4,R2,#0
+            BRz sm21
+check_lp_2    
+            LDR R1,R3,#0 ;ints to first string, R1 points to second string
+; on exit  (see instructions)
+            BRz sm22
+
+
+            ADD R2,R2,#1
+            ADD R3,R3,#1
+            NOT R1,R1       ;concatante the string
+            ADD R1,R1,#1    ; R2 serves are the pointer to destanation 
+            ADD R1,R4,R1
+
+
+            ;checking which loop to attend
+            BRp sm1
+            BRz check_lp_1
+             BRn sm2
+sm1     
+            ADD R0,R0,-1
+            BR return_cmp
+
+sm2     
+            ADD R0,R0,#1
+            BR return_cmp
+
+sm22       
+            ADD R1,R4,R1
+            BRp sm2
+            BRz return_cmp
+
+sm21       
+            LDR R1,R3,#0
+            ADD R1,R4,R1
+            BRnp sm1
+return_cmp ;; the return statement
+
+
+
+
+
             RET
 
 ;------------------------------------------------------------------------------
