@@ -75,15 +75,28 @@ digits         .STRINGZ "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ" ; up to base 36
 ; C declaration: char getDigit (int val);
 
 getDigit                        ; callee setup
+        PUSH  R7
+        PUSH R5
+        ADD R5, R6, #-1      ;SP                  ; code for getDigit
+        LDI R1, R5, #5 ;DEREFERENCE A PTR; R1 IS QUOTENT
+        LDI R2, R5, #6 ;R2 IS REMAINDER
+        LDR R3, R5, #4 ;R3 IS DEVISOR
+        LDR R4, R5, #3 ;R4 IS NUMERNATOR
 
-                                ; code for getDigit
+        NOT R3, R3
+        ADD R3, R3, #1
 
+        looper
+        ADD R4, R4, R3
+        BRp looper
+        
                                 ; callee cleanup
                RET              ; return
 ; ------------------------------------------------------------------------
 ;
 ; C declaration: void divRem(int num, int denom, int*quotient, int*remainder);
-
+;quotient = numerator / divisor;
+;remainder= numerator % divisor;
 divRem                          ; callee setup
 
                                 ; code for dicRem

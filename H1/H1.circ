@@ -1,0 +1,1646 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="P1"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="P1">
+    <a name="circuit" val="P1"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(490,300)" to="(740,300)"/>
+    <wire from="(270,300)" to="(270,370)"/>
+    <wire from="(300,350)" to="(300,420)"/>
+    <wire from="(270,440)" to="(270,510)"/>
+    <wire from="(300,490)" to="(300,560)"/>
+    <wire from="(270,660)" to="(270,730)"/>
+    <wire from="(300,710)" to="(300,780)"/>
+    <wire from="(240,390)" to="(240,460)"/>
+    <wire from="(240,530)" to="(240,600)"/>
+    <wire from="(240,670)" to="(240,740)"/>
+    <wire from="(830,180)" to="(830,510)"/>
+    <wire from="(800,180)" to="(800,440)"/>
+    <wire from="(490,580)" to="(860,580)"/>
+    <wire from="(240,180)" to="(240,320)"/>
+    <wire from="(920,180)" to="(920,720)"/>
+    <wire from="(270,510)" to="(440,510)"/>
+    <wire from="(270,730)" to="(440,730)"/>
+    <wire from="(270,790)" to="(440,790)"/>
+    <wire from="(10,50)" to="(10,200)"/>
+    <wire from="(300,280)" to="(400,280)"/>
+    <wire from="(300,420)" to="(400,420)"/>
+    <wire from="(300,560)" to="(400,560)"/>
+    <wire from="(890,180)" to="(890,650)"/>
+    <wire from="(860,180)" to="(860,580)"/>
+    <wire from="(530,50)" to="(530,200)"/>
+    <wire from="(240,390)" to="(400,390)"/>
+    <wire from="(240,530)" to="(400,530)"/>
+    <wire from="(490,510)" to="(830,510)"/>
+    <wire from="(950,180)" to="(950,790)"/>
+    <wire from="(300,350)" to="(440,350)"/>
+    <wire from="(430,370)" to="(440,370)"/>
+    <wire from="(430,390)" to="(440,390)"/>
+    <wire from="(430,530)" to="(440,530)"/>
+    <wire from="(300,490)" to="(440,490)"/>
+    <wire from="(430,590)" to="(440,590)"/>
+    <wire from="(300,650)" to="(440,650)"/>
+    <wire from="(430,710)" to="(440,710)"/>
+    <wire from="(580,50)" to="(1100,50)"/>
+    <wire from="(10,200)" to="(530,200)"/>
+    <wire from="(270,730)" to="(270,790)"/>
+    <wire from="(270,370)" to="(400,370)"/>
+    <wire from="(270,590)" to="(400,590)"/>
+    <wire from="(270,180)" to="(270,300)"/>
+    <wire from="(490,790)" to="(950,790)"/>
+    <wire from="(240,600)" to="(440,600)"/>
+    <wire from="(240,740)" to="(440,740)"/>
+    <wire from="(240,800)" to="(440,800)"/>
+    <wire from="(240,740)" to="(240,800)"/>
+    <wire from="(300,280)" to="(300,350)"/>
+    <wire from="(270,370)" to="(270,440)"/>
+    <wire from="(300,420)" to="(300,490)"/>
+    <wire from="(270,590)" to="(270,660)"/>
+    <wire from="(240,320)" to="(240,390)"/>
+    <wire from="(240,460)" to="(240,530)"/>
+    <wire from="(240,600)" to="(240,670)"/>
+    <wire from="(1100,50)" to="(1100,200)"/>
+    <wire from="(490,440)" to="(800,440)"/>
+    <wire from="(270,440)" to="(440,440)"/>
+    <wire from="(270,510)" to="(270,590)"/>
+    <wire from="(490,720)" to="(920,720)"/>
+    <wire from="(300,710)" to="(400,710)"/>
+    <wire from="(580,50)" to="(580,200)"/>
+    <wire from="(300,560)" to="(300,650)"/>
+    <wire from="(300,180)" to="(300,280)"/>
+    <wire from="(240,320)" to="(400,320)"/>
+    <wire from="(240,460)" to="(400,460)"/>
+    <wire from="(490,370)" to="(770,370)"/>
+    <wire from="(430,320)" to="(440,320)"/>
+    <wire from="(430,300)" to="(440,300)"/>
+    <wire from="(430,280)" to="(440,280)"/>
+    <wire from="(430,420)" to="(440,420)"/>
+    <wire from="(430,460)" to="(440,460)"/>
+    <wire from="(430,560)" to="(440,560)"/>
+    <wire from="(430,660)" to="(440,660)"/>
+    <wire from="(300,780)" to="(440,780)"/>
+    <wire from="(580,200)" to="(1100,200)"/>
+    <wire from="(740,180)" to="(740,300)"/>
+    <wire from="(770,180)" to="(770,370)"/>
+    <wire from="(490,650)" to="(890,650)"/>
+    <wire from="(10,50)" to="(530,50)"/>
+    <wire from="(300,650)" to="(300,710)"/>
+    <wire from="(270,300)" to="(400,300)"/>
+    <wire from="(270,660)" to="(400,660)"/>
+    <wire from="(240,670)" to="(440,670)"/>
+    <comp lib="1" loc="(430,300)" name="NOT Gate"/>
+    <comp lib="1" loc="(490,580)" name="AND Gate"/>
+    <comp lib="1" loc="(430,660)" name="NOT Gate"/>
+    <comp lib="6" loc="(676,229)" name="Text">
+      <a name="text" val="From your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(300,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="I0"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(800,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="C"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(24,77)" name="Text">
+      <a name="text" val="INPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="1" loc="(430,530)" name="NOT Gate"/>
+    <comp lib="0" loc="(240,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="I2"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(430,320)" name="NOT Gate"/>
+    <comp lib="0" loc="(890,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="F"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(490,440)" name="AND Gate"/>
+    <comp lib="1" loc="(430,590)" name="NOT Gate"/>
+    <comp lib="6" loc="(599,101)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="1" loc="(430,560)" name="NOT Gate"/>
+    <comp lib="0" loc="(950,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="H"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(430,390)" name="NOT Gate"/>
+    <comp lib="6" loc="(25,123)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="1" loc="(490,300)" name="AND Gate"/>
+    <comp lib="0" loc="(920,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="G"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(25,101)" name="Text">
+      <a name="text" val="You may only change the values of the inputs for testing using the hand tool."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="1" loc="(430,710)" name="NOT Gate"/>
+    <comp lib="1" loc="(490,370)" name="AND Gate"/>
+    <comp lib="0" loc="(270,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="I1"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(830,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="D"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(23,32)" name="Text">
+      <a name="text" val="PROBLEM 1: DECODER"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(860,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="E"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(348,229)" name="Text">
+      <a name="text" val="To your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(430,460)" name="NOT Gate"/>
+    <comp lib="0" loc="(770,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(430,280)" name="NOT Gate"/>
+    <comp lib="1" loc="(490,720)" name="AND Gate"/>
+    <comp lib="6" loc="(596,77)" name="Text">
+      <a name="text" val="OUTPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="1" loc="(430,370)" name="NOT Gate"/>
+    <comp lib="1" loc="(430,420)" name="NOT Gate"/>
+    <comp lib="1" loc="(490,510)" name="AND Gate"/>
+    <comp lib="1" loc="(490,650)" name="AND Gate"/>
+    <comp lib="0" loc="(740,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(490,790)" name="AND Gate"/>
+  </circuit>
+  <circuit name="P2">
+    <a name="circuit" val="P2"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(300,570)" to="(300,640)"/>
+    <wire from="(300,180)" to="(300,310)"/>
+    <wire from="(420,580)" to="(470,580)"/>
+    <wire from="(270,330)" to="(320,330)"/>
+    <wire from="(450,360)" to="(630,360)"/>
+    <wire from="(470,380)" to="(470,580)"/>
+    <wire from="(240,350)" to="(240,430)"/>
+    <wire from="(300,310)" to="(300,390)"/>
+    <wire from="(10,50)" to="(10,200)"/>
+    <wire from="(270,410)" to="(370,410)"/>
+    <wire from="(270,590)" to="(370,590)"/>
+    <wire from="(270,650)" to="(370,650)"/>
+    <wire from="(550,580)" to="(550,660)"/>
+    <wire from="(240,430)" to="(240,520)"/>
+    <wire from="(860,180)" to="(860,580)"/>
+    <wire from="(530,50)" to="(530,200)"/>
+    <wire from="(300,390)" to="(300,480)"/>
+    <wire from="(270,500)" to="(270,590)"/>
+    <wire from="(240,430)" to="(330,430)"/>
+    <wire from="(470,380)" to="(630,380)"/>
+    <wire from="(300,310)" to="(320,310)"/>
+    <wire from="(240,180)" to="(240,350)"/>
+    <wire from="(350,500)" to="(370,500)"/>
+    <wire from="(580,50)" to="(1100,50)"/>
+    <wire from="(10,200)" to="(530,200)"/>
+    <wire from="(270,590)" to="(270,650)"/>
+    <wire from="(420,660)" to="(550,660)"/>
+    <wire from="(240,520)" to="(370,520)"/>
+    <wire from="(240,600)" to="(370,600)"/>
+    <wire from="(300,390)" to="(370,390)"/>
+    <wire from="(460,370)" to="(460,500)"/>
+    <wire from="(240,600)" to="(240,670)"/>
+    <wire from="(1100,50)" to="(1100,200)"/>
+    <wire from="(680,580)" to="(860,580)"/>
+    <wire from="(270,500)" to="(320,500)"/>
+    <wire from="(460,370)" to="(630,370)"/>
+    <wire from="(270,180)" to="(270,330)"/>
+    <wire from="(240,520)" to="(240,600)"/>
+    <wire from="(270,330)" to="(270,410)"/>
+    <wire from="(620,330)" to="(620,350)"/>
+    <wire from="(580,50)" to="(580,200)"/>
+    <wire from="(270,410)" to="(270,500)"/>
+    <wire from="(420,500)" to="(460,500)"/>
+    <wire from="(300,480)" to="(300,570)"/>
+    <wire from="(680,370)" to="(830,370)"/>
+    <wire from="(420,410)" to="(450,410)"/>
+    <wire from="(300,570)" to="(330,570)"/>
+    <wire from="(350,310)" to="(370,310)"/>
+    <wire from="(350,330)" to="(370,330)"/>
+    <wire from="(350,350)" to="(370,350)"/>
+    <wire from="(580,200)" to="(1100,200)"/>
+    <wire from="(830,180)" to="(830,370)"/>
+    <wire from="(240,350)" to="(320,350)"/>
+    <wire from="(360,430)" to="(370,430)"/>
+    <wire from="(360,570)" to="(370,570)"/>
+    <wire from="(450,360)" to="(450,410)"/>
+    <wire from="(10,50)" to="(530,50)"/>
+    <wire from="(550,580)" to="(630,580)"/>
+    <wire from="(240,670)" to="(370,670)"/>
+    <wire from="(420,330)" to="(620,330)"/>
+    <wire from="(300,480)" to="(370,480)"/>
+    <wire from="(300,640)" to="(370,640)"/>
+    <wire from="(620,350)" to="(630,350)"/>
+    <comp lib="6" loc="(599,101)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(348,229)" name="Text">
+      <a name="text" val="To your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(360,570)" name="NOT Gate"/>
+    <comp lib="6" loc="(23,32)" name="Text">
+      <a name="text" val="PROBLEM 2: PROGRAMMABLE LOGIC ARRAY"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="1" loc="(420,580)" name="AND Gate"/>
+    <comp lib="1" loc="(360,430)" name="NOT Gate"/>
+    <comp lib="0" loc="(240,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(596,77)" name="Text">
+      <a name="text" val="OUTPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="1" loc="(420,330)" name="AND Gate"/>
+    <comp lib="1" loc="(420,500)" name="AND Gate"/>
+    <comp lib="0" loc="(270,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(25,123)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(24,77)" name="Text">
+      <a name="text" val="INPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(766,229)" name="Text">
+      <a name="text" val="From your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(860,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(25,101)" name="Text">
+      <a name="text" val="You may only change the values of the inputs for testing using the hand tool."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(830,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(420,410)" name="AND Gate"/>
+    <comp lib="1" loc="(420,660)" name="AND Gate"/>
+    <comp lib="1" loc="(350,310)" name="NOT Gate"/>
+    <comp lib="1" loc="(680,580)" name="OR Gate"/>
+    <comp lib="1" loc="(350,500)" name="NOT Gate"/>
+    <comp lib="1" loc="(350,350)" name="NOT Gate"/>
+    <comp lib="1" loc="(680,370)" name="OR Gate"/>
+    <comp lib="1" loc="(350,330)" name="NOT Gate"/>
+    <comp lib="0" loc="(300,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="C"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+  </circuit>
+  <circuit name="P3">
+    <a name="circuit" val="P3"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(600,50)" to="(600,500)"/>
+    <wire from="(350,150)" to="(350,160)"/>
+    <wire from="(280,280)" to="(280,300)"/>
+    <wire from="(280,160)" to="(280,180)"/>
+    <wire from="(280,340)" to="(280,360)"/>
+    <wire from="(280,260)" to="(280,280)"/>
+    <wire from="(340,280)" to="(340,300)"/>
+    <wire from="(340,340)" to="(340,360)"/>
+    <wire from="(360,460)" to="(360,480)"/>
+    <wire from="(460,280)" to="(460,300)"/>
+    <wire from="(460,420)" to="(460,440)"/>
+    <wire from="(80,180)" to="(80,200)"/>
+    <wire from="(140,180)" to="(140,200)"/>
+    <wire from="(220,280)" to="(220,300)"/>
+    <wire from="(220,340)" to="(220,360)"/>
+    <wire from="(280,360)" to="(280,390)"/>
+    <wire from="(400,280)" to="(430,280)"/>
+    <wire from="(400,440)" to="(430,440)"/>
+    <wire from="(560,180)" to="(560,480)"/>
+    <wire from="(280,260)" to="(310,260)"/>
+    <wire from="(280,180)" to="(310,180)"/>
+    <wire from="(460,340)" to="(460,380)"/>
+    <wire from="(10,500)" to="(600,500)"/>
+    <wire from="(280,460)" to="(360,460)"/>
+    <wire from="(360,480)" to="(360,540)"/>
+    <wire from="(400,380)" to="(400,440)"/>
+    <wire from="(400,280)" to="(400,340)"/>
+    <wire from="(360,480)" to="(560,480)"/>
+    <wire from="(280,280)" to="(340,280)"/>
+    <wire from="(280,360)" to="(340,360)"/>
+    <wire from="(10,50)" to="(10,500)"/>
+    <wire from="(220,280)" to="(280,280)"/>
+    <wire from="(220,360)" to="(280,360)"/>
+    <wire from="(310,180)" to="(310,200)"/>
+    <wire from="(310,240)" to="(310,260)"/>
+    <wire from="(430,440)" to="(430,460)"/>
+    <wire from="(110,180)" to="(110,200)"/>
+    <wire from="(250,240)" to="(250,260)"/>
+    <wire from="(250,180)" to="(250,200)"/>
+    <wire from="(280,430)" to="(280,460)"/>
+    <wire from="(250,180)" to="(280,180)"/>
+    <wire from="(250,260)" to="(280,260)"/>
+    <wire from="(430,280)" to="(460,280)"/>
+    <wire from="(430,440)" to="(460,440)"/>
+    <wire from="(430,240)" to="(430,280)"/>
+    <wire from="(430,160)" to="(430,200)"/>
+    <wire from="(10,50)" to="(600,50)"/>
+    <wire from="(350,160)" to="(430,160)"/>
+    <wire from="(280,160)" to="(350,160)"/>
+    <wire from="(360,460)" to="(430,460)"/>
+    <comp lib="0" loc="(80,200)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="tA"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(25,101)" name="Text">
+      <a name="text" val="You may only change the values of the inputs for testing using the hand tool."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(460,340)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="6" loc="(451,528)" name="Text">
+      <a name="text" val="From your pull-down circuit"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(430,240)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(560,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(23,32)" name="Text">
+      <a name="text" val="PROBLEM 3: SERIES-PARALLEL CIRCUITS OF TRANSISTORS"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(200,320)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tA"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(110,200)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="tB"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(230,220)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tA"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(80,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(140,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="C"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(140,200)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="tC"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(290,220)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tC"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(260,320)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tB"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(280,340)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(220,340)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(250,240)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(280,430)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(110,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(440,400)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tA"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(320,320)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tC"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(380,360)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tB"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(440,320)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tC"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(260,410)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tC"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(410,220)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tA"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(460,420)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="6" loc="(25,123)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(340,340)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(400,380)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(350,150)" name="Power"/>
+    <comp lib="6" loc="(24,77)" name="Text">
+      <a name="text" val="RESERVED SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(310,240)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+  </circuit>
+  <circuit name="P4_Main">
+    <a name="circuit" val="P4_Main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(390,220)" to="(390,290)"/>
+    <wire from="(340,210)" to="(400,210)"/>
+    <wire from="(780,280)" to="(780,290)"/>
+    <wire from="(740,240)" to="(860,240)"/>
+    <wire from="(530,50)" to="(530,320)"/>
+    <wire from="(890,180)" to="(890,250)"/>
+    <wire from="(400,180)" to="(400,190)"/>
+    <wire from="(10,50)" to="(10,320)"/>
+    <wire from="(160,270)" to="(340,270)"/>
+    <wire from="(190,180)" to="(190,260)"/>
+    <wire from="(950,180)" to="(950,270)"/>
+    <wire from="(760,260)" to="(760,290)"/>
+    <wire from="(400,210)" to="(400,290)"/>
+    <wire from="(730,230)" to="(830,230)"/>
+    <wire from="(340,180)" to="(340,210)"/>
+    <wire from="(410,200)" to="(410,290)"/>
+    <wire from="(370,200)" to="(410,200)"/>
+    <wire from="(740,180)" to="(740,200)"/>
+    <wire from="(770,270)" to="(770,290)"/>
+    <wire from="(1010,180)" to="(1010,290)"/>
+    <wire from="(440,310)" to="(440,410)"/>
+    <wire from="(420,190)" to="(420,290)"/>
+    <wire from="(190,260)" to="(350,260)"/>
+    <wire from="(750,250)" to="(750,290)"/>
+    <wire from="(800,180)" to="(800,220)"/>
+    <wire from="(130,180)" to="(130,280)"/>
+    <wire from="(790,290)" to="(1010,290)"/>
+    <wire from="(430,180)" to="(430,290)"/>
+    <wire from="(400,190)" to="(420,190)"/>
+    <wire from="(580,50)" to="(1100,50)"/>
+    <wire from="(860,180)" to="(860,240)"/>
+    <wire from="(780,280)" to="(980,280)"/>
+    <wire from="(280,180)" to="(280,230)"/>
+    <wire from="(220,250)" to="(360,250)"/>
+    <wire from="(730,230)" to="(730,290)"/>
+    <wire from="(10,320)" to="(530,320)"/>
+    <wire from="(740,240)" to="(740,290)"/>
+    <wire from="(720,220)" to="(800,220)"/>
+    <wire from="(710,180)" to="(710,190)"/>
+    <wire from="(220,180)" to="(220,250)"/>
+    <wire from="(580,50)" to="(580,320)"/>
+    <wire from="(770,270)" to="(950,270)"/>
+    <wire from="(250,240)" to="(370,240)"/>
+    <wire from="(720,220)" to="(720,290)"/>
+    <wire from="(710,210)" to="(770,210)"/>
+    <wire from="(330,280)" to="(330,290)"/>
+    <wire from="(700,200)" to="(700,290)"/>
+    <wire from="(370,180)" to="(370,200)"/>
+    <wire from="(340,270)" to="(340,290)"/>
+    <wire from="(700,200)" to="(740,200)"/>
+    <wire from="(770,180)" to="(770,210)"/>
+    <wire from="(160,180)" to="(160,270)"/>
+    <wire from="(280,230)" to="(380,230)"/>
+    <wire from="(710,210)" to="(710,290)"/>
+    <wire from="(350,260)" to="(350,290)"/>
+    <wire from="(1100,50)" to="(1100,320)"/>
+    <wire from="(920,180)" to="(920,260)"/>
+    <wire from="(680,180)" to="(680,290)"/>
+    <wire from="(100,290)" to="(320,290)"/>
+    <wire from="(690,190)" to="(710,190)"/>
+    <wire from="(980,180)" to="(980,280)"/>
+    <wire from="(760,260)" to="(920,260)"/>
+    <wire from="(310,180)" to="(310,220)"/>
+    <wire from="(360,250)" to="(360,290)"/>
+    <wire from="(670,310)" to="(670,410)"/>
+    <wire from="(690,190)" to="(690,290)"/>
+    <wire from="(100,180)" to="(100,290)"/>
+    <wire from="(580,320)" to="(1100,320)"/>
+    <wire from="(310,220)" to="(390,220)"/>
+    <wire from="(370,240)" to="(370,290)"/>
+    <wire from="(10,50)" to="(530,50)"/>
+    <wire from="(380,230)" to="(380,290)"/>
+    <wire from="(130,280)" to="(330,280)"/>
+    <wire from="(830,180)" to="(830,230)"/>
+    <wire from="(750,250)" to="(890,250)"/>
+    <wire from="(250,180)" to="(250,240)"/>
+    <comp lib="0" loc="(310,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A4"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(710,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X10"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(430,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A0"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(220,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A7"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(160,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A9"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(440,310)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="12"/>
+      <a name="incoming" val="12"/>
+    </comp>
+    <comp lib="0" loc="(800,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X7"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(680,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X11"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(596,77)" name="Text">
+      <a name="text" val="OUTPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(340,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A3"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(25,123)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(190,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A8"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(599,101)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(860,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X5"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(250,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A6"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(616,370)" name="Text">
+      <a name="text" val="From your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(830,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X6"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(770,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X8"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(400,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A1"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(670,310)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="12"/>
+      <a name="incoming" val="12"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="0" loc="(890,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X4"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(280,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A5"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(130,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A10"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(950,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X2"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(100,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A11"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(23,32)" name="Text">
+      <a name="text" val="PROBLEM 4: 12-BIT INCREMENTER (Main)"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(25,101)" name="Text">
+      <a name="text" val="You may only change the values of the inputs for testing using the hand tool."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(920,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X3"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(24,77)" name="Text">
+      <a name="text" val="INPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(980,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X1"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(1010,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X0"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(370,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A2"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(740,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X9"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(486,370)" name="Text">
+      <a name="text" val="To your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+  </circuit>
+  <circuit name="P4_IncrOneBit">
+    <a name="circuit" val="P4_IncrOneBit"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(260,180)" to="(320,180)"/>
+    <wire from="(580,50)" to="(580,250)"/>
+    <wire from="(530,50)" to="(530,250)"/>
+    <wire from="(770,180)" to="(770,290)"/>
+    <wire from="(10,50)" to="(10,250)"/>
+    <wire from="(320,180)" to="(320,290)"/>
+    <wire from="(770,180)" to="(830,180)"/>
+    <wire from="(820,230)" to="(820,290)"/>
+    <wire from="(580,50)" to="(1100,50)"/>
+    <wire from="(580,250)" to="(1100,250)"/>
+    <wire from="(260,230)" to="(270,230)"/>
+    <wire from="(1100,50)" to="(1100,250)"/>
+    <wire from="(10,50)" to="(530,50)"/>
+    <wire from="(10,250)" to="(530,250)"/>
+    <wire from="(270,230)" to="(270,290)"/>
+    <wire from="(820,230)" to="(830,230)"/>
+    <comp lib="6" loc="(599,101)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(830,180)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="S"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(830,230)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Cout"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(24,77)" name="Text">
+      <a name="text" val="INPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(25,101)" name="Text">
+      <a name="text" val="You may only change the values of the inputs for testing using the hand tool."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(23,32)" name="Text">
+      <a name="text" val="PROBLEM 4: 12-BIT INCREMENTER (IncrOneBit)"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(260,230)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(596,77)" name="Text">
+      <a name="text" val="OUTPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(369,276)" name="Text">
+      <a name="text" val="To your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(25,123)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(260,180)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Cin"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(713,275)" name="Text">
+      <a name="text" val="From your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+  </circuit>
+  <circuit name="P4_IncrBit0">
+    <a name="circuit" val="P4_IncrBit0"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(260,180)" to="(320,180)"/>
+    <wire from="(580,50)" to="(580,250)"/>
+    <wire from="(530,50)" to="(530,250)"/>
+    <wire from="(770,180)" to="(770,290)"/>
+    <wire from="(10,50)" to="(10,250)"/>
+    <wire from="(320,180)" to="(320,290)"/>
+    <wire from="(770,180)" to="(830,180)"/>
+    <wire from="(820,230)" to="(820,290)"/>
+    <wire from="(580,50)" to="(1100,50)"/>
+    <wire from="(580,250)" to="(1100,250)"/>
+    <wire from="(1100,50)" to="(1100,250)"/>
+    <wire from="(10,50)" to="(530,50)"/>
+    <wire from="(10,250)" to="(530,250)"/>
+    <wire from="(820,230)" to="(830,230)"/>
+    <comp lib="6" loc="(25,101)" name="Text">
+      <a name="text" val="You may only change the values of the inputs for testing using the hand tool."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(25,123)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(369,276)" name="Text">
+      <a name="text" val="To your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(830,230)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Cout"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(596,77)" name="Text">
+      <a name="text" val="OUTPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(24,77)" name="Text">
+      <a name="text" val="INPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(599,101)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(260,180)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(713,275)" name="Text">
+      <a name="text" val="From your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(23,32)" name="Text">
+      <a name="text" val="PROBLEM 4: 12-BIT INCREMENTER (IncrBit0)"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(830,180)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="S"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+  </circuit>
+  <circuit name="P5_Main">
+    <a name="circuit" val="P5_Main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(430,300)" to="(430,370)"/>
+    <wire from="(780,270)" to="(960,270)"/>
+    <wire from="(720,180)" to="(720,190)"/>
+    <wire from="(10,50)" to="(10,310)"/>
+    <wire from="(210,180)" to="(210,250)"/>
+    <wire from="(240,240)" to="(360,240)"/>
+    <wire from="(530,50)" to="(530,310)"/>
+    <wire from="(720,210)" to="(720,280)"/>
+    <wire from="(330,270)" to="(330,280)"/>
+    <wire from="(720,210)" to="(780,210)"/>
+    <wire from="(700,190)" to="(700,280)"/>
+    <wire from="(340,260)" to="(340,280)"/>
+    <wire from="(360,180)" to="(360,200)"/>
+    <wire from="(710,200)" to="(750,200)"/>
+    <wire from="(780,180)" to="(780,210)"/>
+    <wire from="(270,230)" to="(370,230)"/>
+    <wire from="(150,180)" to="(150,270)"/>
+    <wire from="(710,200)" to="(710,280)"/>
+    <wire from="(350,250)" to="(350,280)"/>
+    <wire from="(930,180)" to="(930,260)"/>
+    <wire from="(700,190)" to="(720,190)"/>
+    <wire from="(990,180)" to="(990,280)"/>
+    <wire from="(770,260)" to="(930,260)"/>
+    <wire from="(300,180)" to="(300,220)"/>
+    <wire from="(360,240)" to="(360,280)"/>
+    <wire from="(690,180)" to="(690,280)"/>
+    <wire from="(580,310)" to="(1100,310)"/>
+    <wire from="(580,50)" to="(1100,50)"/>
+    <wire from="(300,220)" to="(380,220)"/>
+    <wire from="(370,230)" to="(370,280)"/>
+    <wire from="(380,220)" to="(380,280)"/>
+    <wire from="(120,280)" to="(320,280)"/>
+    <wire from="(840,180)" to="(840,230)"/>
+    <wire from="(760,250)" to="(900,250)"/>
+    <wire from="(240,180)" to="(240,240)"/>
+    <wire from="(390,210)" to="(390,280)"/>
+    <wire from="(330,210)" to="(390,210)"/>
+    <wire from="(780,270)" to="(780,280)"/>
+    <wire from="(750,240)" to="(870,240)"/>
+    <wire from="(900,180)" to="(900,250)"/>
+    <wire from="(580,50)" to="(580,310)"/>
+    <wire from="(680,300)" to="(680,370)"/>
+    <wire from="(150,270)" to="(330,270)"/>
+    <wire from="(390,180)" to="(390,190)"/>
+    <wire from="(180,180)" to="(180,260)"/>
+    <wire from="(1100,50)" to="(1100,310)"/>
+    <wire from="(960,180)" to="(960,270)"/>
+    <wire from="(760,250)" to="(760,280)"/>
+    <wire from="(400,200)" to="(400,280)"/>
+    <wire from="(740,230)" to="(840,230)"/>
+    <wire from="(330,180)" to="(330,210)"/>
+    <wire from="(410,190)" to="(410,280)"/>
+    <wire from="(360,200)" to="(400,200)"/>
+    <wire from="(770,260)" to="(770,280)"/>
+    <wire from="(750,180)" to="(750,200)"/>
+    <wire from="(180,260)" to="(340,260)"/>
+    <wire from="(420,180)" to="(420,280)"/>
+    <wire from="(750,240)" to="(750,280)"/>
+    <wire from="(810,180)" to="(810,220)"/>
+    <wire from="(120,180)" to="(120,280)"/>
+    <wire from="(390,190)" to="(410,190)"/>
+    <wire from="(870,180)" to="(870,240)"/>
+    <wire from="(790,280)" to="(990,280)"/>
+    <wire from="(270,180)" to="(270,230)"/>
+    <wire from="(730,220)" to="(730,280)"/>
+    <wire from="(210,250)" to="(350,250)"/>
+    <wire from="(10,310)" to="(530,310)"/>
+    <wire from="(10,50)" to="(530,50)"/>
+    <wire from="(740,230)" to="(740,280)"/>
+    <wire from="(730,220)" to="(810,220)"/>
+    <comp lib="0" loc="(780,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X7"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(680,300)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="11"/>
+      <a name="incoming" val="11"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="6" loc="(599,101)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(720,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X9"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(619,355)" name="Text">
+      <a name="text" val="From your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(840,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X5"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(24,77)" name="Text">
+      <a name="text" val="INPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(476,354)" name="Text">
+      <a name="text" val="To your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(960,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X1"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(330,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A3"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(690,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X10"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(870,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X4"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(300,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A4"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(360,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A2"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(23,32)" name="Text">
+      <a name="text" val="PROBLEM 5: 11-BIT LEFT NORMALIZER (Main)"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(420,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A0"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(990,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X0"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(240,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A6"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(210,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A7"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(596,77)" name="Text">
+      <a name="text" val="OUTPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(25,123)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(120,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A10"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(750,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X8"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(810,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X6"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(25,101)" name="Text">
+      <a name="text" val="You may only change the values of the inputs for testing using the hand tool."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(390,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A1"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(430,300)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="11"/>
+      <a name="incoming" val="11"/>
+    </comp>
+    <comp lib="0" loc="(270,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A5"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(180,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A8"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(150,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A9"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(930,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X2"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(900,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X3"/>
+      <a name="labelloc" val="north"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+  </circuit>
+  <circuit name="P5_LSH1">
+    <a name="circuit" val="P5_LSH1"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(850,180)" to="(850,240)"/>
+    <wire from="(580,50)" to="(1100,50)"/>
+    <wire from="(580,200)" to="(1100,200)"/>
+    <wire from="(1100,50)" to="(1100,200)"/>
+    <wire from="(10,50)" to="(10,200)"/>
+    <wire from="(10,50)" to="(530,50)"/>
+    <wire from="(10,200)" to="(530,200)"/>
+    <wire from="(270,180)" to="(270,240)"/>
+    <wire from="(530,50)" to="(530,200)"/>
+    <wire from="(580,50)" to="(580,200)"/>
+    <comp lib="0" loc="(850,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="11"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(25,123)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(25,101)" name="Text">
+      <a name="text" val="You may only change the values of the inputs for testing using the hand tool."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(318,229)" name="Text">
+      <a name="text" val="To your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(270,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="11"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(24,77)" name="Text">
+      <a name="text" val="INPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(786,229)" name="Text">
+      <a name="text" val="From your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(599,101)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(596,77)" name="Text">
+      <a name="text" val="OUTPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(23,32)" name="Text">
+      <a name="text" val="PROBLEM 5: 11-BIT LEFT NORMALIZER (LSH1)"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+  </circuit>
+  <circuit name="P5_Mux11">
+    <a name="circuit" val="P5_Mux11"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(850,180)" to="(850,240)"/>
+    <wire from="(580,50)" to="(1100,50)"/>
+    <wire from="(580,200)" to="(1100,200)"/>
+    <wire from="(160,170)" to="(160,240)"/>
+    <wire from="(1100,50)" to="(1100,200)"/>
+    <wire from="(10,50)" to="(10,200)"/>
+    <wire from="(10,50)" to="(530,50)"/>
+    <wire from="(10,200)" to="(530,200)"/>
+    <wire from="(330,180)" to="(330,240)"/>
+    <wire from="(530,50)" to="(530,200)"/>
+    <wire from="(580,50)" to="(580,200)"/>
+    <wire from="(230,180)" to="(230,240)"/>
+    <comp lib="6" loc="(24,77)" name="Text">
+      <a name="text" val="INPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(25,101)" name="Text">
+      <a name="text" val="You may only change the values of the inputs for testing using the hand tool."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(850,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="11"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(786,229)" name="Text">
+      <a name="text" val="From your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(599,101)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(596,77)" name="Text">
+      <a name="text" val="OUTPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(230,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="11"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(25,123)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(23,32)" name="Text">
+      <a name="text" val="PROBLEM 5: 11-BIT LEFT NORMALIZER (Mux11)"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(378,229)" name="Text">
+      <a name="text" val="To your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(160,170)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="S"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(330,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="11"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+  </circuit>
+  <circuit name="P5_CLSH1">
+    <a name="circuit" val="P5_CLSH1"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(850,180)" to="(850,240)"/>
+    <wire from="(580,50)" to="(1100,50)"/>
+    <wire from="(580,200)" to="(1100,200)"/>
+    <wire from="(1100,50)" to="(1100,200)"/>
+    <wire from="(10,50)" to="(10,200)"/>
+    <wire from="(10,50)" to="(530,50)"/>
+    <wire from="(10,200)" to="(530,200)"/>
+    <wire from="(270,180)" to="(270,240)"/>
+    <wire from="(530,50)" to="(530,200)"/>
+    <wire from="(580,50)" to="(580,200)"/>
+    <comp lib="6" loc="(25,123)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(599,101)" name="Text">
+      <a name="text" val="Do not introduce any other input or output pins."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(25,101)" name="Text">
+      <a name="text" val="You may only change the values of the inputs for testing using the hand tool."/>
+      <a name="font" val="Dialog plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(270,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="11"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(23,32)" name="Text">
+      <a name="text" val="PROBLEM 5: 11-BIT LEFT NORMALIZER (CLSH1)"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(596,77)" name="Text">
+      <a name="text" val="OUTPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(786,229)" name="Text">
+      <a name="text" val="From your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(318,229)" name="Text">
+      <a name="text" val="To your logic"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="6" loc="(24,77)" name="Text">
+      <a name="text" val="INPUT SECTION: Do not change anything here!"/>
+      <a name="font" val="Dialog bold 18"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(850,180)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="11"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y"/>
+      <a name="labelloc" val="east"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+  </circuit>
+</project>
