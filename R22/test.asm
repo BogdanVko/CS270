@@ -1,3 +1,3 @@
 .ORIG x0000
-NOT R2, R1
+ADD R2, R1, #3
 .END
