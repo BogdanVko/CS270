@@ -1,0 +1,20 @@
+#!/bin/bash
+# Fritz Sieker
+
+usage() {
+  echo "usage: testPass1 <asmFile>"
+  echo
+  echo "e.g. testPass1 testAdd.asm"
+  exit 1
+}
+
+if [ $# -ne 1 ]
+then
+  usage
+fi
+
+~cs270/lc3tools/lc3as -pass1 $1 > masterPass1
+./mylc3as             -pass1 $1 > myPass1
+
+diff -w masterPass1 myPass1
+
