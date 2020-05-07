@@ -10,7 +10,7 @@ DEFINES   = -DSTACK_OPS -DEBUG
 # Compiler and loader commands and flags
 GCC		= gcc
 GCC_FLAGS	= -g -std=c11 -Wall $(DEFINES) -c
-LD_FLAGS	= -g -std=c11 -Wall
+LD_FLAGS	= -g -std=c11 -Wall -no-pie
 
 # Compile .c files to .o files
 .c.o:
