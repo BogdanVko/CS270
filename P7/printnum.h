@@ -56,6 +56,11 @@ char getDigit (int val);
  *  @param remainder - a pointer to the location to store the remainder
  */
 void divRem (int numerator, int divisor, int* quotient, int* remainder);
+/**
+  *quotient = numerator / divisor;
+  *remainder= numerator % divisor;
+}**/
+
 
 /** Print a number in the specified base. Use the C call <code>putchar()</code>
  *  to print a single character obtained using <code>getDigit()</code>.
